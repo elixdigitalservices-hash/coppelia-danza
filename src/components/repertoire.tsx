@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState, type PointerEvent } from "react";
 import { RevealText } from "@/components/fx/reveal-text";
+import { StackDeck } from "@/components/fx/stack-deck";
 import { StageImage } from "@/components/fx/stage-image";
 import { disciplines } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -59,7 +60,29 @@ export function Repertoire() {
           </p>
         </div>
 
-        <div ref={listRef} className="relative mt-14 lg:mt-20" onPointerMove={onMove} onPointerEnter={onEnter} onPointerLeave={() => setHovering(false)}>
+        {/* Móvil: tarjetas apiladas que se van comiendo unas a otras */}
+        <StackDeck
+          mode="mobile"
+          className="mt-12 md:hidden"
+          cards={disciplines.map((item) => (
+            <Link key={item.slug} href={`/clases#${item.slug}`} className="block border border-white/10 bg-[#0c0c0c] p-2.5">
+              <StageImage photo={item.photo} natural sizes="100vw" className="w-full max-h-[46svh] rounded-[1.3rem]" />
+              <span className="block px-3 pb-4 pt-5">
+                <span className="text-sm font-medium text-tutu">{item.levels}</span>
+                <span className="display mt-2 block text-[2.7rem]">{item.name}</span>
+                <span className="mt-2 block leading-relaxed text-white/75">{item.line}</span>
+                <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white">
+                  Ver la clase
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" aria-hidden="true">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </span>
+            </Link>
+          ))}
+        />
+
+        <div ref={listRef} className="relative mt-14 hidden md:block lg:mt-20" onPointerMove={onMove} onPointerEnter={onEnter} onPointerLeave={() => setHovering(false)}>
           <ul className="border-t border-white/15">
             {disciplines.map((item, index) => (
               <li key={item.slug} className="border-b border-white/15">
@@ -70,7 +93,6 @@ export function Repertoire() {
                   data-cursor="Ver"
                   className="group grid gap-x-8 gap-y-3 py-8 md:grid-cols-12 md:items-baseline lg:py-11"
                 >
-                  <StageImage photo={item.photo} natural sizes="100vw" className="mb-3 md:hidden" />
                   <span className="display text-[clamp(2.5rem,5.2vw,4.75rem)] transition-[color,transform,translate,scale,rotate] duration-500 ease-[var(--ease-out-expo)] group-hover:translate-x-3 group-hover:text-tutu md:col-span-6">
                     <RevealText text={item.name} delay={index * 120} stagger={18} />
                   </span>

@@ -10,7 +10,6 @@ import { RevealText } from "@/components/fx/reveal-text";
 import { StackDeck } from "@/components/fx/stack-deck";
 import { StageImage } from "@/components/fx/stage-image";
 import { Header } from "@/components/header";
-import { MobileCta } from "@/components/mobile-cta";
 import { PageHero } from "@/components/page-hero";
 import { disciplines, photos, whatsappLink } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -103,7 +102,6 @@ export default function ClasesPage() {
         <FinalCta />
       </main>
       <Footer />
-      <MobileCta />
     </>
   );
 }

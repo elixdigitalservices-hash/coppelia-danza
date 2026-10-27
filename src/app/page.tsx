@@ -10,7 +10,6 @@ import { Header } from "@/components/header";
 import { History } from "@/components/history";
 import { Hero } from "@/components/home/hero";
 import { Intro } from "@/components/intro";
-import { MobileCta } from "@/components/mobile-cta";
 import { OnStage } from "@/components/on-stage";
 import { Repertoire } from "@/components/repertoire";
 import { StudioSpace } from "@/components/studio-space";
@@ -36,7 +35,6 @@ export default function HomePage() {
         <FinalCta />
       </main>
       <Footer />
-      <MobileCta />
     </>
   );
 }

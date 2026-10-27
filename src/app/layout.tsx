@@ -3,7 +3,9 @@ import { Bodoni_Moda, Gochi_Hand, Instrument_Sans } from "next/font/google";
 import type { ReactNode } from "react";
 import { Cursor } from "@/components/fx/cursor";
 import { PageCurtain } from "@/components/fx/page-curtain";
+import { TapBurst } from "@/components/fx/tap-burst";
 import { SmoothScroll } from "@/components/smooth-scroll";
+import { WhatsAppFab } from "@/components/whatsapp-fab";
 import { isFinalDomain, photos, siteUrl, studio } from "@/data/site";
 import "./globals.css";
 
@@ -71,6 +73,8 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
         {children}
         <PageCurtain />
         <Cursor />
+        <TapBurst />
+        <WhatsAppFab />
       </body>
     </html>
   );

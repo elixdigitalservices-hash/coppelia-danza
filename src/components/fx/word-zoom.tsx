@@ -7,6 +7,7 @@ import type { Photo } from "@/data/site";
 import { useSectionProgress } from "@/lib/scroll";
 
 const easeIn = (t: number) => t * t * t;
+const WORD_CLASS = "display block select-none whitespace-nowrap text-[30vw] italic leading-none portrait:-rotate-90 portrait:text-[23svh]";
 
 /**
  * Una palabra gigante con una función de fondo: al bajar, la cámara vuela a través de las letras
@@ -21,6 +22,7 @@ export function WordZoom({ word, photo, portrait, after }: { word: string; photo
   const photoScale = useTransform(scrollYProgress, [0, 1], [1.45, 1]);
   const color = useTransform(scrollYProgress, [0.5, 0.8], [0, 1]);
   const hint = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
+  const outline = useTransform(scrollYProgress, [0.1, 0.32], [1, 0]);
   const captionOpacity = useTransform(scrollYProgress, [0.8, 0.94], [0, 1]);
   const captionY = useTransform(scrollYProgress, [0.8, 0.94], [40, 0]);
 
@@ -43,9 +45,20 @@ export function WordZoom({ word, photo, portrait, after }: { word: string; photo
           </motion.div>
         ))}
 
-        {/* Negro con la palabra en blanco, en modo multiplicar: la foto solo se ve a través de las letras */}
+        {/* Negro con la palabra en blanco, en modo multiplicar: la foto solo se ve a través de las letras.
+            En vertical la palabra se gira y ocupa toda la altura para que se vea grande. */}
         <motion.div className="absolute inset-0 flex items-center justify-center bg-black mix-blend-multiply" style={{ opacity: veil }} aria-hidden="true">
-          <motion.span className="display block select-none whitespace-nowrap text-[29vw] italic leading-none text-white lg:text-[30vw]" style={{ scale }}>
+          <motion.span className={WORD_CLASS + " text-white"} style={{ scale }}>
+            {word}
+          </motion.span>
+        </motion.div>
+
+        {/* Contorno de luz sobre las letras: la palabra se lee aunque detrás haya zonas oscuras de la foto */}
+        <motion.div className="pointer-events-none absolute inset-0 flex items-center justify-center" style={{ opacity: outline }} aria-hidden="true">
+          <motion.span
+            className={WORD_CLASS + " text-transparent [-webkit-text-stroke:1.5px_rgba(255,255,255,0.8)] [text-shadow:0_0_40px_rgba(255,241,208,0.35)]"}
+            style={{ scale }}
+          >
             {word}
           </motion.span>
         </motion.div>

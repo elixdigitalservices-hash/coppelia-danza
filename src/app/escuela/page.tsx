@@ -9,7 +9,6 @@ import { WordZoom } from "@/components/fx/word-zoom";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { History } from "@/components/history";
-import { MobileCta } from "@/components/mobile-cta";
 import { OnStage } from "@/components/on-stage";
 import { PageHero } from "@/components/page-hero";
 import { StudioSpace } from "@/components/studio-space";
@@ -68,7 +67,6 @@ export default function EscuelaPage() {
         <FinalCta />
       </main>
       <Footer />
-      <MobileCta />
     </>
   );
 }

@@ -182,33 +182,63 @@ export const facts = [
   { value: "260 m²", label: "de aulas: 145 m² y 115 m²" },
 ];
 
-export const faqs = [
+export const faqTopics = ["Empezar", "Las clases", "La escuela", "Práctico"] as const;
+
+export type Faq = {
+  q: string;
+  a: string;
+  topic: (typeof faqTopics)[number];
+  photo: Photo;
+  action?: { label: string; href: string };
+};
+
+export const faqs: Faq[] = [
   {
     q: "¿Hay una edad para empezar ballet?",
     a: "No. Hay quien empieza con 3 años en Pre-Ballet, quien llega en la adolescencia y quien se acerca por primera vez de adulto. Lo importante no es compararte con quien empezó antes, sino saber dónde estás y trabajar desde ahí.",
+    topic: "Empezar",
+    photo: photos.peques,
+    action: { label: "Ver los grupos por edad", href: "/clases" },
   },
   {
     q: "¿Cómo funciona la clase de prueba?",
     a: "La primera clase es gratis y la matrícula también. Escríbenos por WhatsApp o llámanos, cuéntanos la edad y la experiencia, y te proponemos el grupo y el horario que mejor encajan.",
+    topic: "Empezar",
+    photo: photos.primerasPuntas,
+    action: { label: "Reservar mi clase gratis", href: whatsappLink() },
   },
   {
     q: "¿Necesito saber ballet para hacer Ballet Fitness?",
     a: "No. El Ballet Fitness no requiere nivel de iniciación: usa la técnica del ballet como entrenamiento, dentro y fuera de la barra.",
+    topic: "Las clases",
+    photo: photos.fitness,
+    action: { label: "Probar Ballet Fitness", href: whatsappLink("Hola, me gustaría probar una clase de Ballet Fitness en Coppelia.") },
   },
   {
     q: "¿Preparáis exámenes y pruebas oficiales?",
     a: "Sí. Somos centro adherido a ACADE y nuestros alumnos superan sus exámenes con más de un 98 % de aprobados. También preparamos a quien tiene vocación para las pruebas de acceso a la carrera profesional.",
+    topic: "La escuela",
+    photo: photos.clasico,
+    action: { label: "Conocer la escuela", href: "/escuela" },
   },
   {
     q: "¿Hacéis festival de fin de curso?",
     a: "Sí. Cada curso termina sobre un escenario de verdad. Para nosotros el festival es una clase más, la más especial: se aprende a presentarse ante el público y a disfrutar del trabajo hecho.",
+    topic: "La escuela",
+    photo: photos.escenaBlancas,
   },
   {
     q: "¿Dónde estáis y cómo se llega?",
     a: "En la calle Navarro Caro, 81 (locales 2 y 3), en Tomares, muy cerca de la Avenida del Aljarafe. La lanzadera del metro de San Juan Alto para a pocos metros de la puerta.",
+    topic: "Práctico",
+    photo: photos.aulaGrande,
+    action: { label: "Cómo llegar", href: studio.mapsUrl },
   },
   {
     q: "¿Qué horarios tenéis?",
     a: "Los horarios dependen del grupo, la edad y el nivel. Pregúntanos por WhatsApp o en el 617 319 293 y te enviamos los del curso actual.",
+    topic: "Práctico",
+    photo: photos.barraEspejo,
+    action: { label: "Pedir los horarios", href: whatsappLink("Hola, ¿me podéis enviar los horarios del curso actual de Coppelia?") },
   },
 ];
