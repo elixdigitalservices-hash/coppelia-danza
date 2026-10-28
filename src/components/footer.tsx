@@ -1,7 +1,35 @@
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { nav, studio } from "@/data/site";
 
 const link = "text-white/75 transition-colors hover:text-white";
+
+/** Firma de la agencia, igual que en el resto de webs de ELIX (estilos .firma-elix en globals.css). */
+function FirmaElix() {
+  return (
+    <a
+      href="https://elixdigitalservices.com"
+      target="_blank"
+      rel="noopener"
+      className="firma-elix self-start text-white/80 sm:self-auto"
+      style={{ "--fe-acento": "var(--color-tutu)" } as CSSProperties}
+      aria-label="Diseño y desarrollo: ELIX Digital Services (abre su web en otra pestaña)"
+    >
+      <span className="fe-texto" aria-hidden="true">
+        Diseño y desarrollo
+      </span>
+      <span className="fe-marca" aria-hidden="true">
+        <span className="fe-logo" />
+        <svg className="fe-infinito" viewBox="15 20 170 60" preserveAspectRatio="none">
+          <path d="M100 50C125 10 185 10 185 50C185 90 125 90 100 50C75 10 15 10 15 50C15 90 75 90 100 50Z" pathLength={1} vectorEffect="non-scaling-stroke" />
+        </svg>
+      </span>
+      <span className="fe-cta" aria-hidden="true">
+        <span className="fe-cta-txt">¿Hablamos?</span> <i>↗</i>
+      </span>
+    </a>
+  );
+}
 
 export function Footer() {
   return (
@@ -37,11 +65,14 @@ export function Footer() {
         </address>
       </div>
 
-      <div className="mx-auto flex max-w-[90rem] flex-col gap-1 border-t border-white/10 py-4 pl-5 pr-24 text-xs text-white/40 sm:flex-row sm:justify-between sm:pl-8 sm:pr-28">
-        <p>
-          © {new Date().getFullYear()} {studio.name} · desde 1986
-        </p>
-        <p>Fotos: archivo de la escuela, Blanca de la Cruz y Rafa Núñez Ollero</p>
+      <div className="mx-auto flex max-w-[90rem] flex-col gap-4 border-t border-white/10 px-5 pb-28 pt-5 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between sm:pb-5 sm:pl-8 sm:pr-28">
+        <div className="grid gap-1">
+          <p>
+            © {new Date().getFullYear()} {studio.name} · desde 1986
+          </p>
+          <p>Fotos: archivo de la escuela, Blanca de la Cruz y Rafa Núñez Ollero</p>
+        </div>
+        <FirmaElix />
       </div>
     </footer>
   );

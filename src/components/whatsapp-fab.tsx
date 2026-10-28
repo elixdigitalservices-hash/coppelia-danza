@@ -25,6 +25,9 @@ export function WhatsAppFab() {
         return rect.top < mid && rect.bottom > mid;
       });
       setHidden(inScene || document.documentElement.classList.contains("menu-open"));
+      // El bocadillo no se queda encima del pie (ni de la firma de ELIX)
+      const footer = document.querySelector("footer");
+      if (footer && footer.getBoundingClientRect().top < window.innerHeight) setBubble(false);
       if (!shown && window.scrollY > window.innerHeight * 0.6) {
         shown = true;
         setBubble(true);

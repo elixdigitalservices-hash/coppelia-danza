@@ -333,6 +333,36 @@ html.has-cursor .cursor-layer {
   }
 }
 
+/* Firma de ELIX Digital Services: el mismo componente que en el resto de webs de la agencia */
+@layer components{
+.firma-elix{--fe-acento:#c9adf0;position:relative;display:inline-flex;align-items:center;gap:.8rem;padding:.35rem 0;color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.firma-elix .fe-texto{font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;opacity:.55;white-space:nowrap;transition:opacity .4s ease}
+.firma-elix .fe-marca{position:relative;display:block;height:1.375rem;aspect-ratio:780/121;flex:none}
+.firma-elix .fe-logo{position:absolute;inset:0;opacity:.82;
+  background:linear-gradient(100deg,currentColor 0 42%,var(--fe-acento) 47%,#fff 50%,var(--fe-acento) 53%,currentColor 58% 100%) 0 0/300% 100%;
+  -webkit-mask:url("/img/elix/elix-marca.png") center/contain no-repeat;mask:url("/img/elix/elix-marca.png") center/contain no-repeat;
+  animation:fe-destello 9s ease-in-out 2s infinite;transition:opacity .4s ease}
+.firma-elix .fe-infinito{position:absolute;left:1.5%;top:11.9%;width:29.5%;height:76.8%;overflow:visible;opacity:0;transition:opacity .35s ease;filter:drop-shadow(0 0 3px var(--fe-acento))}
+.firma-elix .fe-infinito path{fill:none;stroke:var(--fe-acento);stroke-width:2.2px;stroke-linecap:round;stroke-dasharray:.2 .8;animation:fe-estela 1.8s linear infinite;animation-play-state:paused}
+.firma-elix .fe-cta{display:inline-flex;align-items:center;gap:.3rem;max-width:0;overflow:hidden;opacity:0;white-space:nowrap;font-size:.75rem;font-weight:600;color:var(--fe-acento);transition:max-width .6s cubic-bezier(.16,1,.3,1),opacity .4s ease}
+.firma-elix .fe-cta i{font-style:normal;display:inline-block;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.firma-elix::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--fe-acento) 20%,var(--fe-acento) 80%,transparent);transform:scaleX(0);transform-origin:left;transition:transform .7s cubic-bezier(.16,1,.3,1);opacity:.7}
+.firma-elix:hover .fe-texto,.firma-elix:focus-visible .fe-texto{opacity:.85}
+.firma-elix:hover .fe-logo,.firma-elix:focus-visible .fe-logo{opacity:1;animation:fe-destello-ya 1.1s ease-out both}
+.firma-elix:hover .fe-infinito,.firma-elix:focus-visible .fe-infinito{opacity:1}
+.firma-elix:hover .fe-infinito path,.firma-elix:focus-visible .fe-infinito path{animation-play-state:running}
+.firma-elix:hover .fe-cta,.firma-elix:focus-visible .fe-cta{max-width:8rem;opacity:1}
+.firma-elix:hover .fe-cta i{transform:translate(2px,-2px)}
+.firma-elix:hover::after,.firma-elix:focus-visible::after{transform:scaleX(1)}
+.firma-elix:focus-visible{outline:2px solid var(--fe-acento);outline-offset:4px;border-radius:2px}
+@keyframes fe-destello{0%,86%{background-position:100% 0}100%{background-position:0 0}}
+@keyframes fe-destello-ya{from{background-position:100% 0}to{background-position:0 0}}
+@keyframes fe-estela{to{stroke-dashoffset:-1}}
+@media (hover:none){.firma-elix .fe-cta{max-width:none;opacity:.9}.firma-elix .fe-cta-txt{display:none}}
+@media (min-width:768px){.firma-elix .fe-marca{height:1.5rem}}
+@media (prefers-reduced-motion:reduce){.firma-elix .fe-logo,.firma-elix:hover .fe-logo{animation:none}.firma-elix .fe-infinito{display:none}}
+}
+
 /* Lenis */
 html.lenis,
 html.lenis body {
