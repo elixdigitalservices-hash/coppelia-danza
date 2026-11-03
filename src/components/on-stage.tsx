@@ -3,6 +3,7 @@
 import { motion, useMotionValue, useMotionValueEvent, useReducedMotion, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { ButtonLink } from "@/components/button-link";
 import { RevealText } from "@/components/fx/reveal-text";
 import { photos, type Photo } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -126,6 +127,9 @@ export function OnStage() {
           <blockquote className="w-[82vw] max-w-[36rem] shrink-0 pl-4 sm:w-[60vw] lg:w-[40rem] lg:pl-16">
             <p className="display text-[clamp(2.4rem,5vw,4.5rem)] italic leading-[1.02]">“Estar en escena enseña a estar en la vida.”</p>
             <footer className="mt-6 text-white/55">Más de 5.000 bailarines han salido a escena con Coppelia.</footer>
+            <ButtonLink href="/alumnos" variant="ghost" className="mt-8">
+              Ver todos los festivales desde 1988
+            </ButtonLink>
           </blockquote>
         </motion.div>
 

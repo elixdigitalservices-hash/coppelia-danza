@@ -45,7 +45,7 @@ export function Footer() {
         </Link>
 
         <nav aria-label="Pie de página" className="flex flex-wrap gap-x-6 gap-y-2">
-          {[{ href: "/", label: "Inicio" }, ...nav].map((item) => (
+          {[{ href: "/", label: "Inicio" }, ...nav, { href: "/blog", label: "Blog" }].map((item) => (
             <Link key={item.href} href={item.href} className={link}>
               {item.label}
             </Link>
@@ -62,6 +62,12 @@ export function Footer() {
           <a href={studio.instagram} target="_blank" rel="noopener noreferrer" className={link}>
             Instagram
           </a>
+          <a href={studio.facebook} target="_blank" rel="noopener noreferrer" className={link}>
+            Facebook
+          </a>
+          <a href={studio.youtube} target="_blank" rel="noopener noreferrer" className={link}>
+            YouTube
+          </a>
         </address>
       </div>
 
@@ -70,7 +76,12 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {studio.name} · desde 1986
           </p>
-          <p>Fotos: archivo de la escuela, Blanca de la Cruz y Rafa Núñez Ollero</p>
+          <p>Fotos: archivo de la escuela, Blanca de la Cruz, Rafa Núñez Ollero y Millán Herce</p>
+          <p>
+            <Link href="/aviso-legal" className="transition-colors hover:text-white">
+              Aviso legal y privacidad
+            </Link>
+          </p>
         </div>
         <FirmaElix />
       </div>

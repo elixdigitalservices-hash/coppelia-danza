@@ -13,6 +13,8 @@ const ITEMS = [
   { href: "/", label: "Inicio", note: "donde empieza la función", photo: photos.salto },
   { href: "/clases", label: "Clases", note: "cuatro formas de moverse", photo: photos.barraEspejo },
   { href: "/escuela", label: "La escuela", note: "40 años, el mismo dibujo", photo: photos.dosBailarinas },
+  { href: "/alumnos", label: "Alumnos", note: "todos los festivales", photo: photos.escenaTutus },
+  { href: "/blog", label: "Blog", note: "historias de la escuela", photo: photos.puntas },
   { href: "/contacto", label: "Contacto", note: "ven a probar", photo: photos.aulaGrande },
 ];
 
@@ -96,7 +98,7 @@ export function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void
                         <span className="block overflow-hidden pb-[0.08em]">
                           <span
                             className={cn(
-                              "display block text-[clamp(3.2rem,8.4vw,7.6rem)] transition-[transform,translate,color] duration-[900ms] ease-[var(--ease-out-expo)] group-hover:translate-x-3 group-hover:text-tutu",
+                              "display block text-[clamp(2.7rem,6.6vw,6.2rem)] transition-[transform,translate,color] duration-[900ms] ease-[var(--ease-out-expo)] group-hover:translate-x-3 group-hover:text-tutu",
                               open ? "translate-y-0" : "translate-y-[110%]",
                               current && "italic text-tutu",
                             )}

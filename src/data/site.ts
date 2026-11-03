@@ -16,9 +16,14 @@ export const studio = {
   phoneHref: "tel:+34617319293",
   landline: "954 155 101",
   landlineHref: "tel:+34954155101",
+  mobile2: "678 232 707",
+  mobile2Href: "tel:+34678232707",
   email: "web@coppeliadanza.com",
   instagram: "https://www.instagram.com/studiodedanzacoppelia/",
   instagramHandle: "@studiodedanzacoppelia",
+  facebook: "https://www.facebook.com/studiodedanzacoppelia",
+  youtube: "https://www.youtube.com/@studiodedanzacoppelia7026",
+  vimeo: "https://vimeo.com/coppeliadanza",
   street: "Calle Navarro Caro, 81 · Local 2 y 3",
   postalCode: "41940",
   city: "Tomares",
@@ -26,6 +31,14 @@ export const studio = {
   geo: { lat: 37.37568, lng: -6.05201 },
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Calle+Navarro+Caro+81+41940+Tomares+Sevilla",
   mapsEmbed: "https://www.google.com/maps?q=Calle+Navarro+Caro+81,+41940+Tomares,+Sevilla&output=embed",
+};
+
+// Datos del titular según el aviso legal de la web antigua.
+export const legal = {
+  holder: "Sonsoles Rodríguez de Mondelo Muñoz",
+  taxId: "30527544N",
+  address: "Calle del Brezo, 3 · 14012 Córdoba",
+  email: "info@coppeliadanza.com",
 };
 
 const whatsappNumber = "34617319293";
@@ -37,6 +50,7 @@ export function whatsappLink(text = "Hola, me gustaría reservar una clase de pr
 export const nav = [
   { href: "/clases", label: "Clases" },
   { href: "/escuela", label: "La escuela" },
+  { href: "/alumnos", label: "Alumnos" },
   { href: "/contacto", label: "Contacto" },
 ];
 
@@ -103,7 +117,14 @@ export const disciplines: Discipline[] = [
     levels: "Pre-Ballet y hasta 7 niveles",
     line: "La base de todos los bailes. Técnica, musicalidad y disciplina desde los 3 años.",
     body: "Es la madre de todas las disciplinas y el centro de nuestra escuela. Empezamos con Pre-Ballet a través del juego, el ritmo y la música, y avanzamos nivel a nivel hasta las puntas, la preparación de exámenes oficiales y el ballet para adultos.",
-    points: ["Pre-Ballet de 3 a 6 años", "Niveles básico, elemental y avanzado desde 6 años", "Preparación de pruebas oficiales ACADE", "Ballet para adultos, empieces cuando empieces"],
+    points: [
+      "Pre-Ballet de 3 a 6 años",
+      "Niveles básico, elemental y avanzado desde 6 años",
+      "Preparación de pruebas oficiales ACADE",
+      "Ballet para adultos, empieces cuando empieces",
+      "Metodología atenta a la salud y al desarrollo psicomotor",
+      "Seguimiento personalizado del progreso de cada alumno",
+    ],
     photo: photos.clasico,
   },
   {
@@ -161,12 +182,37 @@ export const audiences = [
 
 export const milestones = [
   { year: "1986", title: "Se abre el telón", body: "El 27 de septiembre abrimos nuestro primer centro, en Los Chopos (Córdoba), junto a Auxi Vargas." },
+  { year: "1996", title: "Un segundo centro", body: "Abrimos nuestro segundo centro en Córdoba. El festival de fin de curso ya se celebraba en el Gran Teatro." },
+  { year: "2011", title: "Llegamos a Tomares", body: "Abrimos en Tomares, en Sevilla, y volvemos a sentir el vértigo de los comienzos. En junio de 2012, sus alumnos ya bailan en el Auditorio Rafael de León." },
   { year: "2013", title: "En el tribunal de ACADE", body: "Sonsoles Rodríguez de Mondelo forma parte del tribunal de las pruebas de nivel de ACADE en 2012 y 2013." },
   { year: "2015", title: "Dos teatros", body: "170 alumnos llenan el Gran Teatro de Córdoba ante casi 900 personas, y Tomares baila por primera vez en el Teatro Central de Sevilla." },
   { year: "2016", title: "Treinta años", body: "Lo celebramos como mejor sabemos: 90 alumnos de Tomares cierran el curso sobre las tablas del Teatro Central." },
   { year: "2017", title: "Nueva casa en Tomares", body: "Inauguramos las instalaciones de la calle Navarro Caro: dos grandes aulas junto a la Avenida del Aljarafe." },
   { year: "2026", title: "40 años en movimiento", body: "Cuatro décadas y generaciones de alumnos: niñas que hoy son profesoras y que nos traen a sus hijos a bailar." },
 ];
+
+// Del texto de los 30 años (27 de septiembre de 2016) en la web antigua.
+export const thanks = {
+  lead: "Miles de alumnos, muchos de los cuales siguen con nosotros de una forma u otra: alumnas que se convirtieron en profesoras, que nos trajeron a sus hijos a bailar, que todavía nos mandan vídeos, fotos y mensajes. Y profesores y amigos que pusieron alma, corazón, profesionalidad y tiempo en ayudarnos a avanzar.",
+  names: [
+    "Paco de la Cruz",
+    "Mª José Porcel",
+    "Teresa Vázquez",
+    "María Seoane",
+    "Mª Luisa Prados",
+    "María Camino",
+    "Marta Prados",
+    "María Martínez",
+    "Marta Muñoz",
+    "Lorena Domínguez",
+    "Valentina Letova",
+    "Carlos Valcárcel",
+    "Susana García",
+    "Carolina Armenta",
+  ],
+  partner: "Auxi Vargas",
+  partnerNote: "que nos acompañó desde el principio y fue amiga, socia y confidente de un proyecto que no habría sido posible sin ella.",
+};
 
 export const values = [
   { name: "Disciplina", body: "Es la base del baile. Para lograr un objetivo hay que ser persistente y trabajar duro." },
@@ -216,7 +262,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "¿Preparáis exámenes y pruebas oficiales?",
-    a: "Sí. Somos centro adherido a ACADE y nuestros alumnos superan sus exámenes con más de un 98 % de aprobados. También preparamos a quien tiene vocación para las pruebas de acceso a la carrera profesional.",
+    a: "Sí. Somos centro adherido a ACADE (Asociación de Centros Autónomos de Enseñanza Privada) y nuestros alumnos superan sus exámenes con más de un 98 % de aprobados, el porcentaje de alumnos acreditados más alto de Andalucía. También preparamos a quien tiene vocación para las pruebas de acceso a la carrera profesional.",
     topic: "La escuela",
     photo: photos.clasico,
     action: { label: "Conocer la escuela", href: "/escuela" },

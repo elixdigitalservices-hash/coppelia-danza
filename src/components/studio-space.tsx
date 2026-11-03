@@ -12,6 +12,7 @@ const rooms = [
 const details = [
   "Barras, espejos y suelo de danza en las dos aulas",
   "Vestuarios y zonas comunes para esperar con calma",
+  "Instalaciones inauguradas en septiembre de 2017",
   "Junto a la Avenida del Aljarafe, fácil desde Sevilla y el Aljarafe",
   "La lanzadera del metro de San Juan Alto para a pocos metros",
 ];
@@ -26,7 +27,7 @@ export function StudioSpace() {
               <RevealText text="El espacio importa." />
             </h2>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-linoleo">
-              Dos aulas amplias para que el espacio no sea nunca un límite: diagonales, saltos, trabajo de suelo y desplazamientos con libertad de movimiento.
+              Dos aulas amplias, que pueden convertirse en tres, para que el espacio no sea nunca un límite: diagonales, saltos, trabajo de suelo y desplazamientos con libertad de movimiento.
             </p>
 
             <dl className="mt-12 grid grid-cols-2 gap-6 border-t border-noche/15 pt-8">

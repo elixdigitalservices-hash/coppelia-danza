@@ -10,7 +10,10 @@ const LABELS: Record<string, string> = {
   "/": "Inicio",
   "/clases": "Clases",
   "/escuela": "La escuela",
+  "/alumnos": "Alumnos",
+  "/blog": "Blog",
   "/contacto": "Contacto",
+  "/aviso-legal": "Aviso legal",
 };
 
 const CLOSE_MS = 700;

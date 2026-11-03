@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { FeaturedFilm } from "@/components/alumnos/featured-film";
 import { ButtonLink } from "@/components/button-link";
+import { Credits } from "@/components/credits";
 import { FinalCta } from "@/components/final-cta";
 import { Manifesto } from "@/components/fx/manifesto";
 import { RevealText } from "@/components/fx/reveal-text";
@@ -13,6 +15,7 @@ import { OnStage } from "@/components/on-stage";
 import { PageHero } from "@/components/page-hero";
 import { StudioSpace } from "@/components/studio-space";
 import { Values } from "@/components/values";
+import { somosDanza } from "@/data/festivales";
 import { photos } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -59,7 +62,15 @@ export default function EscuelaPage() {
           </div>
         </StageSection>
 
+        <FeaturedFilm
+          video={somosDanza}
+          id="somos-danza"
+          title="Somos danza."
+          lead="Un día cualquiera en Coppelia, contado por nuestras alumnas y profesoras. Lo grabamos en 2014 y sigue diciendo lo mismo que entonces."
+          caption="«Somos danza», Studio de Danza Coppelia"
+        />
         <History />
+        <Credits />
         <Values />
         <WordZoom word="escena" photo={photos.escenaFinal} portrait={photos.escenaArqueras} after="Cada fin de curso, un teatro de verdad." />
         <OnStage />

@@ -94,15 +94,32 @@ export default function ContactoPage() {
               </li>
             ))}
           </ul>
-          <p className="mt-4 text-sm text-white/45">
+          <p className="mt-4 text-sm leading-relaxed text-white/45">
             También en el fijo{" "}
             <a href={studio.landlineHref} className="text-white/75 underline decoration-white/25 underline-offset-4">
               {studio.landline}
+            </a>
+            , en el{" "}
+            <a href={studio.mobile2Href} className="text-white/75 underline decoration-white/25 underline-offset-4">
+              {studio.mobile2}
             </a>{" "}
             o en{" "}
             <a href={`mailto:${studio.email}`} className="text-white/75 underline decoration-white/25 underline-offset-4">
               {studio.email}
             </a>
+            . Y en{" "}
+            <a href={studio.facebook} target="_blank" rel="noopener noreferrer" className="text-white/75 underline decoration-white/25 underline-offset-4">
+              Facebook
+            </a>
+            ,{" "}
+            <a href={studio.youtube} target="_blank" rel="noopener noreferrer" className="text-white/75 underline decoration-white/25 underline-offset-4">
+              YouTube
+            </a>{" "}
+            y{" "}
+            <a href={studio.vimeo} target="_blank" rel="noopener noreferrer" className="text-white/75 underline decoration-white/25 underline-offset-4">
+              Vimeo
+            </a>
+            , donde están los vídeos de los festivales.
           </p>
         </section>
 
