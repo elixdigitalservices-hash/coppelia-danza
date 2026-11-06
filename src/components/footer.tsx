@@ -20,6 +20,7 @@ function FirmaElix() {
       </span>
       <span className="fe-marca" aria-hidden="true">
         <span className="fe-logo" />
+        <span className="fe-halo"><span className="fe-luz" /></span>
         <svg className="fe-infinito" viewBox="15 20 170 60" preserveAspectRatio="none">
           <path d="M100 50C125 10 185 10 185 50C185 90 125 90 100 50C75 10 15 10 15 50C15 90 75 90 100 50Z" pathLength={1} vectorEffect="non-scaling-stroke" />
         </svg>
